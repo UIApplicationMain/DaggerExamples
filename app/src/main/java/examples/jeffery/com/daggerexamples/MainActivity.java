@@ -1,5 +1,6 @@
 package examples.jeffery.com.daggerexamples;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,7 +36,19 @@ public class MainActivity extends AppCompatActivity implements AbsListView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        System.out.println("position: " + position);
+        switch (position) {
+            case 0: {
+                startActivity(new Intent(this, RandomTextActivity.class));
+                break;
+            }
+            case 1: {
+                startActivity(new Intent(this, RandomTextListActivity.class));
+                break;
+            }
+            default: {
+                startActivity(new Intent(this, RandomTextActivity.class));
+            }
+        }
     }
 
     private class Demo {
@@ -48,7 +61,8 @@ public class MainActivity extends AppCompatActivity implements AbsListView.OnIte
 
     private List<Demo> createDemos() {
         List<Demo> demos = new ArrayList<>();
-        demos.add(new Demo("1"));
+        demos.add(new Demo("Button"));
+        demos.add(new Demo("List"));
         return demos;
     }
 }
