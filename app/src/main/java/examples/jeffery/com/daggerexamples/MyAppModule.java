@@ -26,9 +26,6 @@ public class MyAppModule {
     RandomText provideRandomText() {
         return new RandomText(sayings);
     }
-//    RandomText provideRandomText(List<String> sayings) {
-//        return new RandomText(sayings);
-//    }
 
 }
 

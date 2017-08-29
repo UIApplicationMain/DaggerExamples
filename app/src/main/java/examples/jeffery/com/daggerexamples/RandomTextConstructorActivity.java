@@ -11,25 +11,28 @@ import android.view.View;
 
 import javax.inject.Inject;
 
+import examples.jeffery.com.daggerexamples.pc.MyPC;
+import examples.jeffery.com.daggerexamples.pc.PCAdapter;
+
 /**
- * Created by jeffery on 8/26/17.
+ * Created by jeffery on 8/28/17.
  */
 
-public class RandomTextListActivity extends AppCompatActivity {
+public class RandomTextConstructorActivity extends AppCompatActivity {
 
     @Inject
-    RandomText rng;
+    MyPC myPC;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_random_text_list);
+        setContentView(R.layout.activity_pc_constructor);
 
-        DaggerComponentWrapper.getMyAppComponent().inject(this);
+        DaggerComponentWrapper.getMyPCComponent().inject(this);
 
-        RecyclerView list = findViewById(R.id.list_quotes);
+        RecyclerView list = findViewById(R.id.list_pc_parts);
 
-        SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), rng);
+        PCAdapter adapter = new PCAdapter(getApplicationContext(), myPC);
         list.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         list.setAdapter(adapter);
     }

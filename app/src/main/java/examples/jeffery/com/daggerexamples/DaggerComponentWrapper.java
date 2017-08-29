@@ -3,6 +3,11 @@ package examples.jeffery.com.daggerexamples;
 import java.util.ArrayList;
 import java.util.List;
 
+import examples.jeffery.com.daggerexamples.pc.DaggerMyPCComponent;
+import examples.jeffery.com.daggerexamples.pc.Motherboard;
+import examples.jeffery.com.daggerexamples.pc.MyPCComponent;
+import examples.jeffery.com.daggerexamples.pc.PCModule;
+
 /**
  * Created by jeffery on 8/26/17.
  */
@@ -29,4 +34,16 @@ public class DaggerComponentWrapper {
         component = DaggerMyAppComponent.builder().myAppModule(new MyAppModule(quotes)).build();
     }
 
+    private static MyPCComponent pcComponent;
+
+    public static MyPCComponent getMyPCComponent() {
+        if (null == pcComponent) {
+            initPCComponent();
+        }
+        return pcComponent;
+    }
+
+    private static void initPCComponent() {
+        pcComponent = DaggerMyPCComponent.builder().pCModule(new PCModule(new Motherboard("ASUS"))).build();
+    }
 }

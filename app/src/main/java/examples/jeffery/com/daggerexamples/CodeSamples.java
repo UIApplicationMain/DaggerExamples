@@ -1,5 +1,9 @@
 package examples.jeffery.com.daggerexamples;
 
+import javax.inject.Singleton;
+
+import dagger.Component;
+
 /**
  * Created by jeffery on 8/26/17.
  */
@@ -42,3 +46,13 @@ public class CodeSamples {
 
     }
 }
+
+//@Singleton
+//@Component(modules={A.class, B.class})
+//public interface SingletonComponent {
+//    A a();
+//    B b();
+//
+//    void inject(Here here);
+//}
+

@@ -1,7 +1,5 @@
 package examples.jeffery.com.daggerexamples;
 
-import android.widget.ArrayAdapter;
-
 import javax.inject.Singleton;
 
 import dagger.Component;

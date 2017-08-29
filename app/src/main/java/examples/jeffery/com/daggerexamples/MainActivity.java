@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity implements AbsListView.OnIte
                 startActivity(new Intent(this, RandomTextListActivity.class));
                 break;
             }
+            case 2: {
+                startActivity(new Intent(this, RandomTextConstructorActivity.class));
+                break;
+            }
             default: {
                 startActivity(new Intent(this, RandomTextActivity.class));
             }
@@ -63,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements AbsListView.OnIte
         List<Demo> demos = new ArrayList<>();
         demos.add(new Demo("Button"));
         demos.add(new Demo("List"));
+        demos.add(new Demo("Constructor"));
         return demos;
     }
 }

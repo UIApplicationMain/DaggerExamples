@@ -1,4 +1,4 @@
-package examples.jeffery.com.daggerexamples;
+package examples.jeffery.com.daggerexamples.pc;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,24 +7,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import examples.jeffery.com.daggerexamples.R;
+
 /**
- * Created by jeffery on 8/26/17.
+ * Created by jeffery on 8/29/17.
  */
 
-public class SimpleAdapter extends RecyclerView.Adapter {
+public class PCAdapter extends RecyclerView.Adapter {
 
-    private RandomText rng;
+    private MyPC pc;
 
     private Context context;
 
-    SimpleAdapter(Context context, RandomText rng) {
+    public PCAdapter(Context context, MyPC pc) {
         this.context = context;
-        this.rng = rng;
+        this.pc = pc;
     }
 
     @Override
     public int getItemCount() {
-        return rng.getSayings().size();
+        return pc.getItemCount();
     }
 
     @Override
@@ -39,7 +41,8 @@ public class SimpleAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
         SimpleViewHolder svh = (SimpleViewHolder) viewHolder;
-        svh.txt.setText(rng.getSayings().get(i));
+
+        svh.txt.setText(pc.getPcParts().get(i));
     }
 
     private class SimpleViewHolder extends RecyclerView.ViewHolder {
