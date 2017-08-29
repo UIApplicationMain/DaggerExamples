@@ -45,14 +45,26 @@ public class CodeSamples {
     class Touchscreen {
 
     }
-}
 
-//@Singleton
-//@Component(modules={A.class, B.class})
-//public interface SingletonComponent {
-//    A a();
-//    B b();
+//    @Singleton
+//    @Component(modules={A.class, B.class})
+//    public interface SingletonComponent {
+//        A a();
+//        B b();
 //
-//    void inject(Here here);
-//}
+//        void inject(Here here);
+//    }
+
+//    @Component(
+//            dependencies = ApiComponent.class,
+//            ...
+//    )
+//
+//    ApiComponent api = DaggerApiComponent.create();
+//    HousesComponent houses = DaggerHousesComponent()
+//            .apiComponent(api)
+//            ...
+//            .build();
+
+}
 

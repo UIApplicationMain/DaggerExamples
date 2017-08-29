@@ -13,5 +13,4 @@ import examples.jeffery.com.daggerexamples.RandomTextConstructorActivity;
 @Component(modules = {PCModule.class})
 public interface MyPCComponent {
     void inject(RandomTextConstructorActivity activity);
-
 }
