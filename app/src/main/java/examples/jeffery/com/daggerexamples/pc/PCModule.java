@@ -12,16 +12,17 @@ import dagger.Provides;
 @Module
 public class PCModule {
 
-    private final Motherboard mb;
-
-    public PCModule(Motherboard mb) {
-        this.mb = mb;
+    @Provides
+    @Singleton
+    public Motherboard provideMotherboard() {
+        return new Motherboard("ASUS");
     }
 
     @Provides
     @Singleton
-    public Motherboard provideMotherboard() {
-        return this.mb;
+    public GPU provideGPU() {
+        return new GPU("Nvidia");
     }
 
 }
+

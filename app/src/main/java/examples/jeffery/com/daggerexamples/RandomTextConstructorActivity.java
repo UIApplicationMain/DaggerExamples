@@ -35,6 +35,9 @@ public class RandomTextConstructorActivity extends AppCompatActivity {
         PCAdapter adapter = new PCAdapter(getApplicationContext(), myPC);
         list.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         list.setAdapter(adapter);
+
+        System.out.println("***");
+        System.out.println(DaggerComponentWrapper.getMyPCComponent().gpu());
     }
 
     @Override

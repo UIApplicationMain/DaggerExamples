@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import examples.jeffery.com.daggerexamples.pc.DaggerMyPCComponent;
-import examples.jeffery.com.daggerexamples.pc.Motherboard;
 import examples.jeffery.com.daggerexamples.pc.MyPCComponent;
-import examples.jeffery.com.daggerexamples.pc.PCModule;
 
 /**
  * Created by jeffery on 8/26/17.
@@ -44,6 +42,7 @@ public class DaggerComponentWrapper {
     }
 
     private static void initPCComponent() {
-        pcComponent = DaggerMyPCComponent.builder().pCModule(new PCModule(new Motherboard("ASUS"))).build();
+        pcComponent = DaggerMyPCComponent.create();
     }
+
 }

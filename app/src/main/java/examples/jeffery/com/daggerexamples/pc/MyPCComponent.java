@@ -12,5 +12,9 @@ import examples.jeffery.com.daggerexamples.RandomTextConstructorActivity;
 @Singleton
 @Component(modules = {PCModule.class})
 public interface MyPCComponent {
+
+    Motherboard mb();
+    GPU gpu();
+
     void inject(RandomTextConstructorActivity activity);
 }
